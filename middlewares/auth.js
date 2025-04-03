@@ -7,6 +7,7 @@ export const isAdminAuthenticated=catchAssyncherros(async(req,res,next)=>{
 // first when i logedin this time my cookies store in my browser but it not accessable by
 // client side kno when i heat any api this time my req object take this cookies and give it to server
 // and server decode it and take the data from cookies.
+// if i have cookies in browser this time every reqest browser by default send this cookies    
 const token=req.cookies.adminToken;
 if(!token){
     return next(new ErrorHandeler("Admin not Authenticated",400));
